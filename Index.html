@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASS Web Player</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+    <style>
+        body { margin: 0; background-color: #222; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .dp-container { width: 80%; max-width: 900px; }
+    </style>
+</head>
+<body>
+    <div id="dplayer" class="dp-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new DPlayer({
+                container: document.getElementById('dplayer'),
+                video: {
+                    // **غير هذا الرابط:** يجب أن يكون رابطًا مباشرًا لملف الفيديو المستضاف خارجيًا
+                    url: 'https://example.com/your_video.mp4', 
+                },
+                subtitle: {
+                    // **غير هذا الرابط:** يجب أن يكون رابطًا مباشرًا لملف الترجمة ASS المستضاف خارجيًا
+                    url: 'https://example.com/your_subtitle.ass', 
+                    type: 'ass',
+                }
+            });
+        });
+    </script>
+</body>
+</html>
